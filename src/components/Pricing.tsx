@@ -4,7 +4,7 @@ import { Check, CreditCard, Truck, Clock } from "lucide-react";
 
 export function Pricing() {
   const handleBuyClick = () => {
-    document.getElementById('comprar')?.scrollIntoView({ behavior: 'smooth' });
+    window.open('https://wa.me/5511999999999?text=Quero%20comprar%20o%20livro%20Esperança', '_blank');
   };
 
   const features = [

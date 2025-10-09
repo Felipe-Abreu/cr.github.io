@@ -8,7 +8,7 @@ export function ContactGuarantee() {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5564981494012?text=Quero%20comprar%20o%20livro%20Esperança', '_blank');
+        document.getElementById('comprar')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
