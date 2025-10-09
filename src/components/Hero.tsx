@@ -5,7 +5,7 @@ import bookCover from "@/assets/book-cover.jpg";
 
 export function Hero() {
   const handleBuyClick = () => {
-    document.getElementById('comprar')?.scrollIntoView({ behavior: 'smooth' });
+    window.open('https://wa.me/5564981494012?text=Quero%20comprar%20o%20livro%20Esperança', '_blank');
   };
 
   return (

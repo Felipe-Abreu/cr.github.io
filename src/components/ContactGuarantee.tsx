@@ -8,7 +8,7 @@ export function ContactGuarantee() {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5511999999999?text=Quero%20comprar%20o%20livro%20Esperança', '_blank');
+    window.open('https://wa.me/5564981494012?text=Quero%20comprar%20o%20livro%20Esperança', '_blank');
   };
 
   return (
@@ -48,7 +48,7 @@ export function ContactGuarantee() {
                     href="mailto:contato@esperancalivro.com" 
                     className="text-primary hover:underline"
                   >
-                    contato@esperancalivro.com
+                    cr.livro@gmail.com
                   </a>
                 </div>
               </div>
