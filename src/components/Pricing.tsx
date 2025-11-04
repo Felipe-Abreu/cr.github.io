@@ -20,8 +20,8 @@ export function Pricing() {
     
     if (cleanCep.length !== 8) {
       toast({
-        title: "CEP inv�lido",
-        description: "Por favor, insira um CEP v�lido com 8 d�gitos",
+        title: "CEP inválido",
+        description: "Por favor, insira um CEP válido com 8 dígitos",
         variant: "destructive",
       });
       return;
@@ -30,16 +30,13 @@ export function Pricing() {
     setLoading(true);
     
     try {
-      // Usando API dos Correios via ViaCEP + c�lculo estimado
       const response = await fetch(`https://viacep.com.br/ws/${cleanCep}/json/`);
       const data = await response.json();
       
       if (data.erro) {
-        throw new Error("CEP n�o encontrado");
+        throw new Error("CEP não encontrado");
       }
 
-      // Simula��o de c�lculo (em produ��o, usar API oficial dos Correios ou Melhor Envio)
-      // PAC estimado baseado em regi�o
       const estimatedPrice = calculateEstimatedPrice(data.uf);
       const estimatedDays = calculateEstimatedDays(data.uf);
       
@@ -65,7 +62,6 @@ export function Pricing() {
   };
 
   const calculateEstimatedPrice = (uf: string) => {
-    // Estimativa baseada em regi�o (GO � Centro-Oeste)
     const regions: { [key: string]: number } = {
       GO: 15, DF: 15, MT: 18, MS: 18, // Centro-Oeste
       SP: 18, RJ: 20, MG: 18, ES: 20, // Sudeste
