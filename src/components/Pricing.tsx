@@ -213,7 +213,7 @@ export function Pricing() {
             <Button 
               variant="cta" 
               size="xl" 
-              onClick={handleBuyClick}
+              onClick={() => window.open('https://wa.me/5564981494012?text=Quero%20comprar%20o%20livro%20Esperança', '_blank')}
               className="w-full md:w-auto"
             >
               Compre aqui
