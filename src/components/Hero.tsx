@@ -65,22 +65,19 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Imagem circular — mantém a foto única, remove o excesso de branco pelas bordas */}
           <div className="relative flex justify-center lg:justify-end animate-scale-in">
             <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden ring-1 ring-white/8 shadow-2xl bg-[color:var(--bg-card)]">
-              {/* Increase scale to crop-out white margin; objectPosition moves the focus (x% y%). */}
               <img
                 src={bookCover}
                 alt="Capa e autor \u2014 Esperança"
                 className="w-full h-full object-cover"
                 style={{
-                  objectPosition: "38% 50%", // mova horizontalmente: < 38% => mais � esquerda (pessoa); > => mais capa
-                  transform: "scale(1.14)", // aumenta para 'quebrar' o anel branco; ajuste entre 1.05 e 1.25
+                  objectPosition: "38% 50%",
+                  transform: "scale(1.02)",
                   transition: "transform .35s ease",
                 }}
               />
 
-              {/* vinheta interna suave para foco e remover qualquer halo vis�vel */}
               <div
                 aria-hidden="true"
                 className="absolute inset-0 pointer-events-none rounded-full"
