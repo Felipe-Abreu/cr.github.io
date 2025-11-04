@@ -65,54 +65,31 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Imagem do livro (mantendo a foto única, melhor enquadramento e contorno) */}
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-[320px] md:w-[380px] lg:w-[440px]">
-              {/* destaque difuso atrás da imagem */}
-              <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-primary/8 to-transparent filter blur-3xl opacity-90 -z-10"></div>
+          {/* Imagem circular — mantém a foto única, remove o excesso de branco pelas bordas */}
+          <div className="relative flex justify-center lg:justify-end animate-scale-in">
+            <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden ring-1 ring-white/8 shadow-2xl bg-[color:var(--bg-card)]">
+              {/* Increase scale to crop-out white margin; objectPosition moves the focus (x% y%). */}
+              <img
+                src={bookCover}
+                alt="Capa e autor \u2014 Esperança"
+                className="w-full h-full object-cover"
+                style={{
+                  objectPosition: "38% 50%", // mova horizontalmente: < 38% => mais � esquerda (pessoa); > => mais capa
+                  transform: "scale(1.14)", // aumenta para 'quebrar' o anel branco; ajuste entre 1.05 e 1.25
+                  transition: "transform .35s ease",
+                }}
+              />
 
-              {/* cartão da imagem com borda, sombra e frame interno */}
+              {/* vinheta interna suave para foco e remover qualquer halo vis�vel */}
               <div
-                className="relative rounded-3xl overflow-hidden shadow-[0_25px_50px_rgba(8,15,30,0.4)] ring-1 ring-white/10"
-                style={{ transform: "translateZ(0)" }}
-              >
-                {/* Vignette (overlay radial) para escurecer bordas e focar no centro/direita */}
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background:
-                      "radial-gradient(ellipse at 35% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.06) 40%, rgba(0,0,0,0.18) 100%)",
-                    mixBlendMode: "multiply",
-                    zIndex: 10,
-                  }}
-                />
-
-                {/* imagem única: ajusta object-position para focar pessoa + capa */}
-                <img
-                  src={bookCover}
-                  alt="Capa e autor — Esperança"
-                  className="w-full h-[560px] md:h-[620px] lg:h-[720px] object-cover"
-                  // Ajuste object-position para deslocar o enquadramento.
-                  // Ex.: '30% 50%' mostra mais à esquerda (pessoa); '60% 50%' foca mais na capa.
-                  style={{ objectPosition: "38% 50%" }}
-                />
-
-                {/* contorno interno claro no canto inferior direito com leve destaque */}
-                <div
-                  aria-hidden="true"
-                  className="absolute right-4 bottom-4 rounded-md px-3 py-2 text-sm text-white/90"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))",
-                    zIndex: 20,
-                    transform: "translateZ(10px)",
-                  }}
-                >
-                  <div className="font-medium">Carlos Roberto</div>
-                  <div className="text-xs opacity-80">Autor</div>
-                </div>
-              </div>
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none rounded-full"
+                style={{
+                  background:
+                    "radial-gradient(circle at 40% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.04) 80%, rgba(0,0,0,0.12) 100%)",
+                  mixBlendMode: "multiply",
+                }}
+              />
             </div>
           </div>
         </div>
