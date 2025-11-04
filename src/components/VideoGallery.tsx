@@ -35,6 +35,9 @@ export function VideoGallery() {
           <Card className="overflow-hidden shadow-strong animate-scale-in">
             <video 
               controls 
+              autoPlay
+              loop
+              playsInline
               className="w-full h-auto"
               poster="/videos/book-preview-2.mp4"
             >
