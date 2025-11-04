@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Truck, Shield, CreditCard } from "lucide-react";
-import bookCover from "@/assets/book-cover.jpg";
+import bookCover from "@/assets/book-and-author.png";
 
 export function Hero() {
   const handleBuyClick = () => {
