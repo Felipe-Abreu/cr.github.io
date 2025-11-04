@@ -64,12 +64,17 @@ export function Hero() {
           {/* Imagem do livro */}
           <div className="relative animate-scale-in">
             <div className="relative max-w-md mx-auto">
-              <div className="absolute inset-0 bg-primary-foreground/20 blur-3xl rounded-full"></div>
+              {/* <div className="absolute inset-0 bg-primary-foreground/20 blur-3xl rounded-full"></div>
               <img 
                 src={bookCover} 
                 alt="Capa do livro Esperança: O Caminho para a Transformação"
                 className="relative w-full h-auto shadow-strong rounded-lg"
-              />
+              /> */}
+              <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full"></div>
+                <img 
+                  src={bookCover} 
+                  className="relative w-full h-auto rounded-full shadow-strong"
+                />
             </div>
           </div>
         </div>
